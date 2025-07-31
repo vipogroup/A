@@ -504,6 +504,30 @@
         }
         
         /* מדיה קווריז למובייל */
+        .mobile-trust-badges {
+            display: none;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .mobile-trust-badges .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse; /* מימין לשמאל */
+            flex-wrap: nowrap;
+            gap: 5px;
+        }
+        
+        .mobile-trust-badges .trust-badge {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            white-space: nowrap;
+        }
+        
+        .desktop-only {
+            display: block;
+        }
+        
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -515,9 +539,13 @@
                 justify-content: center;
             }
             
-            .trust-badges-container {
-                justify-content: center;
-                margin: 15px 0;
+            .trust-badges-container.desktop-only {
+                display: none;
+            }
+            
+            .mobile-trust-badges {
+                display: block;
+                margin: 20px 0;
             }
             
             .trust-badges {
@@ -659,14 +687,29 @@
             content: '\f058';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
+            margin-left: 5px;
+            color: var(--primary);
         }
         
-        .product-subtitle {
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .gallery-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .gallery-description {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            line-height: 1.5;
-            max-width: 80%;
-            margin-bottom: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .back-button {
@@ -1307,13 +1350,6 @@
                 <div class="product-headline">
                     <div class="product-badge">מוצר מוביל</div>
                     <h1 class="product-title">כורסת עיסוי ביתית מקצועית V9Z</h1>
-                    <div class="trust-badges-container">
-                        <div class="trust-badges">
-                            <span class="trust-badge"><i class="fas fa-truck"></i> משלוח חינם</span>
-                            <span class="trust-badge"><i class="fas fa-shield-alt"></i> אחריות לשנתיים</span>
-                            <span class="trust-badge"><i class="fas fa-credit-card"></i> תשלום מאובטח</span>
-                        </div>
-                    </div>
                     <div class="rating-container">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -1325,12 +1361,22 @@
                         <span class="rating-count">4.7 (127 ביקורות)</span>
                         <span class="verified-buyers">מאומת ע"י קונים אמיתיים</span>
                     </div>
-                    <p class="product-subtitle">חוויית עיסוי מקצועית בנוחות הבית שלך</p>
+                    <div class="trust-badges-container desktop-only">
+                        <div class="trust-badges">
+                            <span class="trust-badge"><i class="fas fa-truck"></i> משלוח חינם</span>
+                            <span class="trust-badge"><i class="fas fa-shield-alt"></i> אחריות לשנתיים</span>
+                            <span class="trust-badge"><i class="fas fa-credit-card"></i> תשלום מאובטח</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
         
         <div class="product-container">
+            <div class="gallery-intro">
+                <h2 class="gallery-title">חוויית עיסוי מקצועית בנוחות הבית שלך</h2>
+                <p class="gallery-description">הכורסה החדשנית שלנו משלבת טכנולוגיה מתקדמת עם עיצוב ארגונומי לחוויית עיסוי מושלמת</p>
+            </div>
             <div class="product-gallery">
                 <div class="hot-tag">
                     <i class="fas fa-fire"></i> חם במיוחד
@@ -1396,6 +1442,15 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Trust badges for mobile only -->
+            <div class="mobile-trust-badges">
+                <div class="trust-badges">
+                    <span class="trust-badge"><i class="fas fa-truck"></i> משלוח חינם</span>
+                    <span class="trust-badge"><i class="fas fa-shield-alt"></i> אחריות לשנתיים</span>
+                    <span class="trust-badge"><i class="fas fa-credit-card"></i> תשלום מאובטח</span>
                 </div>
             </div>
             
